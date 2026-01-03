@@ -25,6 +25,9 @@ public class BeanGerenciado {
     @Autowired // via propriedade
     private TodoValidator validator;
 
+    @Autowired
+    private AppProperties appProperties;
+
     @Autowired // via construtor
     public BeanGerenciado(TodoValidator validator){
         this.validator = validator;
@@ -33,5 +36,9 @@ public class BeanGerenciado {
     @Autowired // via metodo Set
     public void setValidator(TodoValidator validator){
         this.validator = validator;
+    }
+
+    public void imprimirPropriedade(){
+        System.out.println("Valor da variavel: " + appProperties.getVariavel());
     }
 }
